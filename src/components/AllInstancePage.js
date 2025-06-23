@@ -11,14 +11,14 @@ function AllInstancePage() {
 
   const fetchInstances = () => {
     axios
-      .get('https://coursemanagement-backend.onrender.com//instances')
+      .get('https://coursemanagement-backend.onrender.com/instances')
       .then(res => setInstances(res.data))
       .catch(() => alert(" Error fetching instances"));
   };
 
   const handleDelete = (year, semester, courseId) => {
     axios
-      .delete(`https://coursemanagement-backend.onrender.com//instances/${year}/${semester}/${courseId}`)
+      .delete(`https://coursemanagement-backend.onrender.com/instances/${year}/${semester}/${courseId}`)
       .then(fetchInstances)
       .catch(() => alert(" Failed to delete instance"));
   };

@@ -6,14 +6,14 @@ function CourseForm({ onSuccess }) {
   const [allCourses, setAllCourses] = useState([]);
 
   useEffect(() => {
-    axios.get('https://coursemanagement-backend.onrender.com//courses')
+    axios.get('https://coursemanagement-backend.onrender.com/courses')
       .then(res => setAllCourses(res.data))
       .catch(() => console.error("Failed to load courses"));
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://coursemanagement-backend.onrender.com//courses', form)
+    axios.post('https://coursemanagement-backend.onrender.com/courses', form)
       .then(() => {
         alert(" Course added successfully");
         setForm({ title: '', courseId: '', description: '', prerequisites: [] });
