@@ -10,7 +10,7 @@ The frontend is built using React and communicates with the backend API hosted o
 
 ## Live Deployment
 
-Frontend Live: https://course-management-frontend-iota.vercel.app
+Course Management Web-App Live: https://course-management-frontend-iota.vercel.app
 
 ## Tech Stack
 
