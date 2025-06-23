@@ -6,7 +6,7 @@ function InstanceForm({ onSuccess }) {
   const [validCourseIds, setValidCourseIds] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/courses')
+    axios.get('https://coursemanagement-backend.onrender.com//courses')
       .then(res => setValidCourseIds(res.data.map(c => c.courseId)))
       .catch(() => alert(" Failed to fetch course list"));
   }, []);
@@ -18,7 +18,7 @@ function InstanceForm({ onSuccess }) {
       return alert(" Invalid Course ID! Please enter a valid, existing Course ID.");
     }
 
-    axios.post('http://localhost:5000/api/instances', instance)
+    axios.post('https://coursemanagement-backend.onrender.com//instances', instance)
       .then(() => {
         alert(" Instance created");
         setInstance({ year: '', semester: '', courseId: '' });

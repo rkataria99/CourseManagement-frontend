@@ -10,10 +10,10 @@ function InstanceDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/instances/${year}/${semester}/${id}`)
+      .get(`https://coursemanagement-backend.onrender.com//instances/${year}/${semester}/${id}`)
       .then(res => {
         setInstance(res.data);
-        return axios.get(`http://localhost:5000/api/courses/${id}`);
+        return axios.get(`https://coursemanagement-backend.onrender.com//courses/${id}`);
       })
       .then(res => {
         setCourse(res.data);

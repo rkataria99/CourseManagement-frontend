@@ -28,14 +28,14 @@ function CourseList({ refresh }) {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/api/courses')
+      .get('https://coursemanagement-backend.onrender.com//courses')
       .then(res => setCourses(res.data))
       .catch(() => alert('Failed to fetch courses'));
   }, [refresh]);
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/api/courses/${id}`)
+      .delete(`https://coursemanagement-backend.onrender.com//courses/${id}`)
       .then(() => setCourses(prev => prev.filter(c => c.courseId !== id)))
       .catch(err =>
         alert(" " + (err.response?.data?.message || "Error deleting course"))
