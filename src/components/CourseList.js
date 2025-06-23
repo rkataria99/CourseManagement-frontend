@@ -52,6 +52,7 @@ function CourseList({ refresh }) {
       } else {
         container.scrollBy({ left: 300, behavior: 'smooth' });
       }
+      handleScroll(); // Update progress bar after auto-scroll
     }, 3000);
 
     return () => clearInterval(interval);
@@ -59,9 +60,12 @@ function CourseList({ refresh }) {
 
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' });
+    handleScroll();
   };
+
   const scrollRight = () => {
     scrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' });
+    handleScroll();
   };
 
   return (
