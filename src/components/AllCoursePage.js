@@ -11,7 +11,7 @@ function AllCoursePage() {
 
   const fetchCourses = () => {
     axios
-      .get("https://coursemanagement-backend.onrender.com/api/courses")
+      .get("https://coursemanagement-backend-sfnq.onrender.com/api/courses")
       .then(res => setCourses(res.data))
       .catch(() => alert(" Error fetching courses"));
   };
@@ -19,7 +19,7 @@ function AllCoursePage() {
   const handleDelete = (courseId) => {
     if (!window.confirm(`Are you sure you want to delete course ${courseId}?`)) return;
     axios
-      .delete(`https://coursemanagement-backend.onrender.com/api/courses/${courseId}`)
+      .delete(`https://coursemanagement-backend-sfnq.onrender.com/api/courses/${courseId}`)
       .then(() => {
         setCourses(prev => prev.filter(c => c.courseId !== courseId));
       })

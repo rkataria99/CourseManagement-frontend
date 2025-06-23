@@ -9,7 +9,7 @@ function CourseDetail() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get(`https://coursemanagement-backend.onrender.com/api/courses/${id}`)
+    axios.get(`https://coursemanagement-backend-sfnq.onrender.com/api/courses/${id}`)
       .then(res => setCourse(res.data))
       .catch(() => setError(" Course not found"));
   }, [id]);
