@@ -19,7 +19,7 @@ function InstanceList({ refresh }) {
     }
 
     axios
-      .get(`https://coursemanagement-backend.onrender.com/instances/${year}/${semester}`)
+      .get(`https://coursemanagement-backend.onrender.com/api/instances/${year}/${semester}`)
       .then(res => {
         const data = res.data;
         if (data.length === 0) {
@@ -35,7 +35,7 @@ function InstanceList({ refresh }) {
 
   const handleDelete = (courseId) => {
     axios
-      .delete(`https://coursemanagement-backend.onrender.com/instances/${year}/${semester}/${courseId}`)
+      .delete(`https://coursemanagement-backend.onrender.com/api/instances/${year}/${semester}/${courseId}`)
       .then(fetchInstances)
       .catch(() => alert("Failed to delete instance"));
   };
